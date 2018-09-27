@@ -2,3 +2,6 @@
 build
 *.pyc
 node_modules
+
+CMakeCache.txt
+CMakeFiles/
