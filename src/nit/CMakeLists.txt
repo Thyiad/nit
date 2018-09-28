@@ -13,4 +13,4 @@ set(NIT_SRC
   eval/rank.cc
   eval/suit.cc
   )
-add_library(nit ${NIT_SRC})
+add_library(nit SHARED ${NIT_SRC})

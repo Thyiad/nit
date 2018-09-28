@@ -14,8 +14,10 @@ using namespace std;
 
 NAN_METHOD(meme) {
 
+  nit::CardSet me("AsAc");
+
   info.GetReturnValue().Set(
-    Nan::New<String>("something.str()").ToLocalChecked()
+    Nan::New<String>(me.str()).ToLocalChecked()
   );
 }
 

@@ -1,3 +1,3 @@
-var addon = require("./build/cli/nit-addon");
+var addon = require("./build/Release/nit-addon");
 
-console.log(addon);
+console.log(addon.meme());

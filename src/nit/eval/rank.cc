@@ -1,9 +1,8 @@
 /**
  * Copyright (c) 2012 Andrew Prock. All rights reserved.
  */
+#include <iostream>
 #include "rank.h"
-
-#include <nit/error.h>
 
 namespace nit {
 
@@ -53,7 +52,7 @@ void Rank::fromString(const std::string& c) {
   if (code >= 0)
     m_rank = code;
   else
-    throw DomainError("Rank parse error") << errinfo_value(c);
+    std::cout << "Wow nice error" << std::endl;
 }
 
 int Rank::rank_code(char c) {
