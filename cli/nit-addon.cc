@@ -72,6 +72,9 @@ NAN_METHOD(calculateOdds) {
     double win = results[i].winShares / total;
     double tie = results[i].tieShares / total;
     string hand = hands[i];
+    if (hand == ".") {
+      hand = "random";
+    }
 
     Local<Value> winValue  = Nan::New(win);
     Local<Value> tieValue  = Nan::New(tie);

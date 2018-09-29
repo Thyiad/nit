@@ -13,7 +13,7 @@
   },
   "devDependencies": {},
   "scripts": {
-    "build": "cmake-js rebuild"
+    "build": "cmake-js rebuild -O ../build"
   },
   "repository": {
     "type": "git",
