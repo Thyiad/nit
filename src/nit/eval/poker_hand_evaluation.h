@@ -4,7 +4,6 @@
 #ifndef NIT_EVAL_POKER_HAND_EVALUATION_H_
 #define NIT_EVAL_POKER_HAND_EVALUATION_H_
 
-#include <nit/error.h>
 
 #include "poker_evaluation.h"
 
@@ -45,10 +44,8 @@ class PokerHandEvaluation {
   PokerEvaluation eval(size_t n = 0) const {
     if (n == 0)
       return eval1;
-    else if (n == 1)
-      return eval2;
     else
-      throw LogicError("invalid evaluation requested");
+      return eval2;
   }
 
  private:

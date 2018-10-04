@@ -7,8 +7,6 @@
 
 #include <algorithm>
 
-#include <nit/error.h>
-
 #include "holdem.h"
 #include "poker_evaluation.h"
 #include "poker_evaluation_tables.h"
@@ -54,8 +52,6 @@ std::string PokerHand::str() const {
 }
 
 std::string PokerHand::preflopstr() const {
-  if (m_ncards != 2)
-    throw LogicError("incorrect number of cards for hold'em preflop canon");
   Card c0 = m_cards[0];
   Card c1 = m_cards[1];
 

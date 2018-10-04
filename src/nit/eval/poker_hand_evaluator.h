@@ -9,8 +9,6 @@
 
 #include <boost/noncopyable.hpp>
 
-#include <nit/error.h>
-
 #include "card_set.h"
 #include "poker_hand_evaluation.h"
 
@@ -100,7 +98,7 @@ class PokerHandEvaluator : private boost::noncopyable {
    * used to add "draws" to draw games
    */
   virtual void setNumDraws(size_t /*sz*/) {
-    throw LogicError("not implemented");
+    
   }
 
   /**

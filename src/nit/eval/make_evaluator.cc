@@ -4,8 +4,6 @@
 
 #include "make_evaluator.h"
 
-#include <nit/error.h>
-
 #include "badugi_hand_evaluator.h"
 #include "deuce_to_seven_hand_evaluator.h"
 #include "draw_high_hand_evaluator.h"
@@ -59,8 +57,6 @@ std::unique_ptr<PokerHandEvaluator> makeEvaluator(const std::string& strid) {
       if (strid[2] == 'o' || strid[2] == 'O')  // PLO
         return detail::make_unique<OmahaHighHandEvaluator>();
 
-      throw LogicError("no compatible pot limit game available");
-
       // For the draw games, we need to be able to evaluate 1 card to
       // determine the bring in on 3rd street
 
@@ -103,7 +99,6 @@ std::unique_ptr<PokerHandEvaluator> makeEvaluator(const std::string& strid) {
       // UniversalHandEvaluator(0,52,0,0,0,&CardSet::evaluateBadugi,NULL);
       return detail::make_unique<BadugiHandEvaluator>();
   }
-  throw LogicError("No evaluator for poker type.") << errinfo_value(strid);
 }
 
 }  // namespace nit

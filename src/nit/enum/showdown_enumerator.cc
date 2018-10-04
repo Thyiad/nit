@@ -3,8 +3,6 @@
  */
 #include "showdown_enumerator.h"
 
-#include <nit/error.h>
-
 #include "odometer.h"
 #include "partition_enumerator.h"
 #include "simple_deck.h"
