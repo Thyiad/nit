@@ -1,8 +1,6 @@
 #include <exception>
 #include <iostream>
 
-#include <boost/exception/all.hpp>
-
 
 /// Guards a main function from exceptions.
 ///

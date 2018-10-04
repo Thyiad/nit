@@ -36,7 +36,17 @@ endif()
 #
 # set up boost
 #
-set(Boost_USE_STATIC_LIBS ON)
+set(Boost_USE_STATIC_LIBS ON)  
+set(Boost_USE_STATIC_RUNTIME ON)
+
+file(GLOB_RECURSE boostlib_cmake_path "${CMAKE_CURRENT_SOURCE_DIR}/node_modules" "BoostLib.cmake")
+list(GET boostlib_cmake_path 0 boostlib_cmake_path)
+get_filename_component(boostlib_cmake_path "${boostlib_cmake_path}" DIRECTORY)
+SET(CMAKE_MODULE_PATH "${CMAKE_MODULE_PATH};${boostlib_cmake_path}")
+include(BoostLib)
+
+require_boost_libs(">= 1.58.0" "coroutine")
+include_directories(${Boost_INCLUDE_DIRS})
 
 # Also search for includes in PROJECT_BINARY_DIR to find config.h.
 include_directories("${PROJECT_BINARY_DIR}")
