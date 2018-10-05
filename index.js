@@ -1,4 +1,4 @@
-var addon = require("./build/Release/nit-addon");
+var addon = require("../build/Release/nit-addon");
 
 const obj = {
   hands: ['AsAc', 'KsKc'],
