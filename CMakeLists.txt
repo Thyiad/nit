@@ -45,7 +45,7 @@ get_filename_component(boostlib_cmake_path "${boostlib_cmake_path}" DIRECTORY)
 SET(CMAKE_MODULE_PATH "${CMAKE_MODULE_PATH};${boostlib_cmake_path}")
 include(BoostLib)
 
-require_boost_libs(">= 1.58.0" "coroutine")
+require_boost_libs("<= 1.68.0" "coroutine")
 include_directories(${Boost_INCLUDE_DIRS})
 
 # Also search for includes in PROJECT_BINARY_DIR to find config.h.
