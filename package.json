@@ -1,29 +1,29 @@
 {
-  "name": "nit",
-  "version": "1.0.0",
-  "description": "Nit ===",
-  "main": "index.js",
-  "directories": {
-    "doc": "doc",
-    "test": "tests"
-  },
-  "dependencies": {
-    "boost-lib": "^0.11.3",
-    "cmake-js": "^4.0.0",
-    "nan": "^2.11.0"
-  },
-  "devDependencies": {},
-  "scripts": {
-    "build": "cmake-js build -O ../build"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/jaimindarji88/nit.git"
-  },
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/jaimindarji88/nit/issues"
-  },
-  "homepage": "https://github.com/jaimindarji88/nit#readme"
+    "name": "nit",
+    "version": "1.0.0",
+    "description": "Nit ===",
+    "main": "index.js",
+    "directories": {
+        "doc": "doc",
+        "test": "tests"
+    },
+    "dependencies": {
+        "boost-lib": "^0.11.3",
+        "cmake-js": "^6.3.0",
+        "nan": "^2.15.0"
+    },
+    "scripts": {
+        "compile": "cmake-js compile",
+        "build": "cmake-js build -O ./build --debug"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/jaimindarji88/nit.git"
+    },
+    "author": "",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/jaimindarji88/nit/issues"
+    },
+    "homepage": "https://github.com/jaimindarji88/nit#readme"
 }

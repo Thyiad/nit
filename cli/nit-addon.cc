@@ -22,11 +22,13 @@ NAN_METHOD(calculateOdds) {
   vector<string> hands;
   vector<nit::CardDistribution> handDists;
 
+  v8::Local<v8::Context> context = Nan::GetCurrentContext();
+
   if (info.Length() == 0) {
     cout << "WOWEE no args were passed in" << endl;
   }
 
-  Local<Object> obj = info[0]->ToObject();
+  Local<Object> obj = info[0].As<v8::Object>();
   Local<String> handProp  = Nan::New("hands").ToLocalChecked();
   Local<String> boardProp = Nan::New("board").ToLocalChecked();
 
@@ -34,8 +36,8 @@ NAN_METHOD(calculateOdds) {
   Local<Array> jsArr = Local<Array>::Cast(jsVal);
 
   for (int i = 0; i < jsArr->Length(); i++) {
-    Local<Value> jsElement = jsArr->Get(i);
-    string hand = string(*Nan::Utf8String(jsElement->ToString()));
+    Local<Value> jsElement = Nan::Get(jsArr, i).ToLocalChecked();
+    string hand = string(*Nan::Utf8String(jsElement));
 
     hands.push_back(hand);
     handDists.emplace_back();
@@ -50,7 +52,7 @@ NAN_METHOD(calculateOdds) {
   }
 
   Local<Value> boardValue = Nan::Get(obj, boardProp).ToLocalChecked();
-  board = string(*Nan::Utf8String(boardValue->ToString()));
+  board = string(*Nan::Utf8String(boardValue));
 
   nit::ShowdownEnumerator showdown;
   vector<nit::EquityResult> results = showdown.calculateEquity(
@@ -84,7 +86,7 @@ NAN_METHOD(calculateOdds) {
     Nan::Set(handObject, Nan::New("tie").ToLocalChecked(), tieValue);
     Nan::Set(handObject, Nan::New("hand").ToLocalChecked(), handValue);
 
-    handsArr->Set(i, handObject);
+    Nan::Set(handsArr, i, handObject);
   }
   Nan::Set(handsObject, Nan::New("hands").ToLocalChecked(), handsArr);
 
@@ -92,10 +94,8 @@ NAN_METHOD(calculateOdds) {
 }
 
 void InitAll(Handle<Object> exports) {
-  exports->Set(
-    Nan::New<String>("calculateOdds").ToLocalChecked(),
-    Nan::New<FunctionTemplate>(calculateOdds)->GetFunction()
-  );
+  v8::Local<v8::Context> context = Nan::GetCurrentContext();
+  Nan::Set(exports, Nan::New<String>("calculateOdds").ToLocalChecked(), Nan::New<FunctionTemplate>(calculateOdds)->GetFunction(context).ToLocalChecked());
 }
 
 NODE_MODULE(addon, InitAll);
