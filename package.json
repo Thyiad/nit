@@ -14,7 +14,7 @@
     },
     "scripts": {
         "compile": "cmake-js compile",
-        "build": "cmake-js build -O ./build --debug"
+        "build": "cmake-js build -O ./build"
     },
     "repository": {
         "type": "git",
