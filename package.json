@@ -14,7 +14,8 @@
     },
     "scripts": {
         "compile": "cmake-js compile",
-        "build": "cmake-js build -O ./build --debug"
+        "build": "cmake-js build -O ./build",
+        "build:win": "cmake-js build -O ./build --target ALL_BUILD --config Release"
     },
     "repository": {
         "type": "git",

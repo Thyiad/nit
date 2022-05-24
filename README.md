@@ -77,3 +77,11 @@ To install the dependencies with [homebrew](http://brew.sh/):
     brew install cmake boost
 
 The building instructions are the same as for [Linux](#linux)
+
+### win
+先运行 [Linux](#linux) 中的步骤
+然后尝试 ``npm run build``
+```
+cmake -G "Visual Studio 16 2019" -S . -B ./build
+cmake --build ./build --config Release
+```

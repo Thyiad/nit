@@ -7,6 +7,8 @@
 #include <nit/enum/showdown_enumerator.h>
 #include <nit/eval/make_evaluator.h>
 
+#pragma comment(lib, "node.lib")
+
 using v8::FunctionTemplate;
 using v8::Handle;
 using v8::Object;

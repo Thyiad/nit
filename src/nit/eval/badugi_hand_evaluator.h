@@ -22,12 +22,14 @@ class BadugiHandEvaluator : public PokerHandEvaluator {
     return PokerHandEvaluation(hand.evaluateBadugi());
   }
 
+  #pragma warning(disable : 4716)
   PokerEvaluation evaluateRanks(
       const CardSet& /*hand*/,
       const CardSet& /*board*/ = CardSet(0)) const override {
         std::cout << "error";
   }
 
+    #pragma warning(disable : 4716)
   PokerEvaluation evaluateSuits(
       const CardSet& /*hand*/,
       const CardSet& /*board*/ = CardSet(0)) const override {
