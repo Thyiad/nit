@@ -77,3 +77,8 @@ To install the dependencies with [homebrew](http://brew.sh/):
     brew install cmake boost
 
 The building instructions are the same as for [Linux](#linux)
+
+### nit_release
+
+基于node 14，在mac、win10 x64上编译出来的产物
+linux上的产物尚未编译过
