@@ -81,3 +81,4 @@ The building instructions are the same as for [Linux](#linux)
 ### nit_release
 
 基于node 14，在mac、win10 x64、centos stream上编译出来的产物
+在node 16上用不了，用node 16也未编译成功，先不管了

@@ -1,4 +1,6 @@
-cmake_minimum_required(VERSION 3.1)
+cmake_minimum_required(VERSION 3.15)
+cmake_policy(SET CMP0091 NEW)
+cmake_policy(SET CMP0042 NEW)
 
 # In-source build prevention.
 set(CMAKE_DISABLE_SOURCE_CHANGES ON)
@@ -31,6 +33,11 @@ if("${CMAKE_CXX_COMPILER_ID}" STREQUAL "GNU")
 
 elseif("${CMAKE_CXX_COMPILER_ID}" STREQUAL "Clang")
   set(CMAKE_CXX_FLAGS_DEBUG "${CMAKE_CXX_FLAGS_DEBUG} -Wno-missing-braces -Wshadow -Wunused-exception-parameter")
+endif()
+
+if(MSVC AND CMAKE_JS_NODELIB_DEF AND CMAKE_JS_NODELIB_TARGET)
+  # Generate node.lib
+  execute_process(COMMAND ${CMAKE_AR} /def:${CMAKE_JS_NODELIB_DEF} /out:${CMAKE_JS_NODELIB_TARGET} ${CMAKE_STATIC_LINKER_FLAGS})
 endif()
 
 #

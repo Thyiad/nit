@@ -9,8 +9,8 @@
     },
     "dependencies": {
         "boost-lib": "^0.11.3",
-        "cmake-js": "^6.3.0",
-        "nan": "^2.15.0"
+        "cmake-js": "^7.2.0",
+        "nan": "^2.17.0"
     },
     "scripts": {
         "compile": "cmake-js compile",
