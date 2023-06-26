@@ -15,7 +15,7 @@ option(NIT_BUILD_TESTS "Build tests" OFF)
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)  # Needed for Clang Tooling.
 
 # Require C++11 support.
-set(CMAKE_CXX_STANDARD 11)
+set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_CXX_EXTENSIONS OFF)
 
