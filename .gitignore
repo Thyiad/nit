@@ -5,3 +5,5 @@ node_modules
 
 CMakeCache.txt
 CMakeFiles/
+node-v16.20.0
+node.lib
