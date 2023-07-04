@@ -79,9 +79,17 @@ To install the dependencies with [homebrew](http://brew.sh/):
 The building instructions are the same as for [Linux](#linux)
 
 ### win
-先运行 [Linux](#linux) 中的步骤
-然后尝试 ``npm run build``
+
+#### 生成解决方案
+``` bash
+# 安装依赖
+npm install
+
+# 生成 visual studio 解决方案，17 2022 是 visual studio 2022
+cmake -G "Visual Studio 17 2022" -S . -B ./build
 ```
-cmake -G "Visual Studio 16 2019" -S . -B ./build
-cmake --build ./build --config Release
-```
+
+#### 修改代码
+- 如果报nan.h找不到，在nit-addon -> 属性 -> VC++目录 -> 外部包含目录 里添加node_modules/nan
+* 如果报node相关定义找不到，到 <https://nodejs.org/download/release/> headers文件下来
+* 如果报node.lib找不到,到 <https://nodejs.org/download/release/>下载node.lib下来

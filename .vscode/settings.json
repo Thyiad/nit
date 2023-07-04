@@ -48,6 +48,7 @@
     "utility": "cpp",
     "memory": "cpp",
     "optional": "cpp",
-    "system_error": "cpp"
+    "system_error": "cpp",
+    "xstring": "cpp"
   }
 }

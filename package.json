@@ -26,5 +26,10 @@
     "bugs": {
         "url": "https://github.com/jaimindarji88/nit/issues"
     },
-    "homepage": "https://github.com/jaimindarji88/nit#readme"
+    "homepage": "https://github.com/jaimindarji88/nit#readme",
+    "overrides": {
+        "boost-lib": {
+            "cmake-js": "^7.2.0"
+        }
+    }
 }
