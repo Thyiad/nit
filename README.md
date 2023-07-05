@@ -98,7 +98,6 @@ cmake -G "Visual Studio 17 2022" -S . -B ./build
 #### 修改代码
 
 - 如果报nan.h找不到，在nit-addon -> 属性 -> VC++目录 -> 外部包含目录 里添加node_modules/nan
-
-- 如果报node相关定义找不到，到 <https://nodejs.org/download/release/> headers文件下来
+- 如果报node相关定义找不到，到 <https://nodejs.org/download/release/> headers文件下来，并且外部包含目录里添加对应的node header文件
 - 如果报node.lib找不到,到 <https://nodejs.org/download/release/>下载node.lib下来
 - 如果报 stage64\lib 找不到，就直接把名字里的x64删掉
